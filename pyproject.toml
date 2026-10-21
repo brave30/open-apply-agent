@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "open-apply-agent"
+version = "0.1.0"
+description = "Human-reviewed job application agent using OpenWebRL's browser environment"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+dependencies = ["playwright==1.58.0", "timeout-decorator==0.5.0", "pillow>=12", "pydantic>=2.12,<3"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+inference = ["torch>=2.5", "torchvision>=0.20", "transformers>=4.57,<6"]
+
+[project.scripts]
+auto-apply = "auto_apply.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["auto_apply*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

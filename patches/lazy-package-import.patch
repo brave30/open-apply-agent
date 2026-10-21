@@ -1,0 +1,126 @@
+diff --git a/openwebrl/__init__.py b/openwebrl/__init__.py
+index b3d0325..765d3a7 100644
+--- a/openwebrl/__init__.py
++++ b/openwebrl/__init__.py
+@@ -1,78 +1,21 @@
+-"""OpenWebRL browser-agent training and evaluation package."""
+-
+-import os
+-import sys
+-
+-# Core types from base module
+-from openwebrl.base.types import (
+-    Status,
+-    InteractionResult,
+-    EnvConfig,
+-    ToolCall,
+-    ParsedToolResult,
+-)
+-
+-# Base adapter class for extensions
+-from openwebrl.base.adapter import BaseGymEnvAdapter
+-
+-# Registry
+-from openwebrl.base.registry import DEFAULT_REGISTRY as ENV_REGISTRY
+-from openwebrl.base.registry import EnvRegistry
+-
+-# Utilities
+-from openwebrl.base.utils import (
+-    ToolParser,
+-    TokenHandler,
+-    tools_to_openai_format,
+-    calls_to_action,
+-    TOOL_INSTRUCTION,
+-)
+-
+-# New extensible interface (uses registry from base)
+-# from openwebrl.generate_new import (
+-#     ENV_REGISTRY,
+-#     set_active_env,
+-#     get_task_prompts as get_task_prompts_new,
+-#     get_task_ids as get_task_ids_new,
+-# )
+-
+-# Legacy interface (for backward compatibility)
+-from openwebrl.generate_browser import (
+-    generate_trajectory_sample,
+-    generate_turn_sample,
+-    # get_task_prompts,
+-    # get_task_ids,
+-    # res_to_sample,
+-    # TAU2_CONFIGS,
+-)
+-
+-__all__ = [
+-    # Core types
+-    "Status",
+-    "InteractionResult",
+-    "EnvConfig",
+-    "ToolCall",
+-    "ParsedToolResult",
+-    # Base class for extensions
+-    "BaseGymEnvAdapter",
+-    # Registry
+-    "EnvRegistry",
+-    # Utilities
+-    "ToolParser",
+-    "TokenHandler",
+-    "tools_to_openai_format",
+-    "calls_to_action",
+-    "TOOL_INSTRUCTION",
+-    # New interface
+-    "ENV_REGISTRY",
+-    # "set_active_env",
+-    # "get_task_prompts_new",
+-    # "get_task_ids_new",
+-    # Legacy interface
+-    # "generate",
+-    "generate_trajectory_sample",
+-    "generate_turn_sample"
+-    # "get_task_prompts",
+-    # "get_task_ids",
+-    # "res_to_sample",
+-]
++"""OpenWebRL exports, loaded lazily so browser-only inference needs no RL stack."""
++from importlib import import_module
++
++_MODULES = {
++    "Status": "base.types", "InteractionResult": "base.types", "EnvConfig": "base.types",
++    "ToolCall": "base.types", "ParsedToolResult": "base.types",
++    "BaseGymEnvAdapter": "base.adapter", "EnvRegistry": "base.registry",
++    "ToolParser": "base.utils", "TokenHandler": "base.utils",
++    "tools_to_openai_format": "base.utils", "calls_to_action": "base.utils",
++    "TOOL_INSTRUCTION": "base.utils", "generate_trajectory_sample": "generate_browser",
++    "generate_turn_sample": "generate_browser", "ENV_REGISTRY": "base.registry",
++}
++__all__ = list(_MODULES)
++
++def __getattr__(name):
++    if name not in _MODULES:
++        raise AttributeError(name)
++    attr = "DEFAULT_REGISTRY" if name == "ENV_REGISTRY" else name
++    value = getattr(import_module("openwebrl." + _MODULES[name]), attr)
++    globals()[name] = value
++    return value
+diff --git a/openwebrl/env/web_env.py b/openwebrl/env/web_env.py
+index 3ebcb2b..ebb5d5d 100644
+--- a/openwebrl/env/web_env.py
++++ b/openwebrl/env/web_env.py
+@@ -139,7 +139,8 @@ class WebEnv(BaseEnv):
+         self.playwright = await async_playwright().start()
+         self.browser_type = self.playwright.chromium
+         self.browser = await self.browser_type.launch(
+-            headless=True, args=self.browser_args, proxy=self.proxy_settings
++            channel=getattr(self, "browser_channel", None),
++            headless=getattr(self, "headless", True), args=self.browser_args, proxy=self.proxy_settings
+         )
+ 
+         await self._initialize_context(
+@@ -304,6 +305,7 @@ class WebEnv(BaseEnv):
+ 
+         # Basic context configuration
+         context_options = {
++            "service_workers": "block",
+             "viewport": {"width": self.css_width, "height": self.css_height},
+             "device_scale_factor": self.dpr,
+             "is_mobile": False,

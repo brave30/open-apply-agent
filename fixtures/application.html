@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>Example Labs · Synthetic application</title>
+<style>body{font:16px system-ui;background:#edf2f6;color:#183449;margin:40px auto;max-width:820px}main{background:white;padding:32px;border-radius:16px}h1{margin:8px 0}small{color:#496777}form{display:grid;grid-template-columns:1fr 1fr;gap:18px}label{display:flex;flex-direction:column;gap:6px}input,select,textarea,button{font:inherit;padding:10px;border:1px solid #afc1cd;border-radius:6px}.wide{grid-column:1/-1}button{background:#164e63;color:white;cursor:pointer}.banner{background:#e0f2fe;padding:14px;border-radius:6px;margin:20px 0}</style>
+<main><small>EXAMPLE LABS · DEVELOPMENT FIXTURE</small><h1>Software Engineer</h1><div class="banner">Synthetic applications only. Unknown answers stay empty. Final submission requires terminal approval.</div>
+<form method="post" action="/submit" enctype="multipart/form-data">
+<label>Full name<input id="full_name" name="full_name" required></label>
+<label>Email address<input id="email" name="email" type="email" required></label>
+<label>Phone number<input id="phone" name="phone" type="tel"></label>
+<label>City<input id="city" name="city"></label>
+<label>School<input id="school" name="school"></label>
+<label>Degree<input id="degree" name="degree"></label>
+<label>Most recent employer<input id="employer" name="employer"></label>
+<label>Most recent job title<input id="job_title" name="job_title"></label>
+<label class="wide">Skills<textarea id="skills" name="skills"></textarea></label>
+<label>Are you authorized to work in the United States?<select id="work_authorization" name="work_authorization"><option value="">Choose an answer</option><option value="yes">Yes</option><option value="no">No</option></select></label>
+<label>Desired salary<input id="salary" name="salary"></label>
+<label class="wide">Why do you want this job?<textarea id="motivation" name="motivation"></textarea></label>
+<label class="wide">Resume<input id="resume" name="resume" type="file" accept=".txt,.pdf,.docx" required></label>
+<button id="submit" type="submit" class="wide">Submit synthetic application</button>
+</form></main></html>

@@ -1,0 +1,54 @@
+# MVP status — October 20, 2026
+
+## Visible test update — October 21, 2026
+
+Added `--headed`, `--inspect`, and optional installed-browser selection via `--browser-channel`. The upstream launch patch now exposes those settings while retaining headless Chromium as the default. Downloaded headed Chromium failed with `spawn UNKNOWN` on this system; installed Microsoft Edge successfully ran the complete visible workflow with **13/13 checks**, uploaded resume, two unanswered fields left blank, and no submission. The completed form remains open until the user closes its browser window. Evidence: `artifacts/20261021T222052Z-163475c7/result.json`. Ruff passed after the change.
+
+## Working and verified
+
+- Cloned and inspected OpenWebRL at `9a120949aca3e58a2628f4b4e6edd0474d984873`.
+- Browser execution uses upstream WebEnv, with a recorded lazy-import/service-worker patch. Browser-only import loads none of `slime`, Torch, SGLang, or Ray.
+- Persistent Pydantic candidate profile and generated JSON Schema cover personal information, education, jobs, skills, resume files, and verified answers.
+- The local application run filled ten stored text/select answers, uploaded the checked synthetic resume, and left salary/motivation empty with human-input requests.
+- Independent fixture evaluation passed **13/13 checks**, including exact resume bytes and correct abstention. The default run made **no submission**.
+- A real pretrained SmolVLM-256M CPU inference smoke test passed through an OpenWebRL write action, with the actual field containing `ORCHID`. No training ran.
+- Submission defense tests blocked unapproved browser and direct HTTP attempts, rejected changed approved contents, and accepted a simulated explicit approval for exactly one synthetic application.
+- Screenshots, action JSONL, profile snapshot, correctness results, Playwright trace, benchmark task JSONL, and canonical multimodal episode export are generated.
+- **10 tests passed** in 37.22 seconds. Ruff checks passed. Editable package installation and the installed CLI help command passed on Windows.
+
+## Evidence saved in this workspace
+
+| Check | Artifact |
+| --- | --- |
+| Final application run | `artifacts/20261020T232156Z-a90aea0f/result.json` |
+| Independent correctness oracle | `artifacts/20261020T232156Z-a90aea0f/fixture_evaluation.json` |
+| Review values/file hash | `artifacts/20261020T232156Z-a90aea0f/review.json` |
+| Browser trace | `artifacts/20261020T232156Z-a90aea0f/playwright-trace.zip` |
+| Evaluation/SFT-shape exports | `artifacts/20261020T232156Z-a90aea0f/benchmark.jsonl`, `openai_episode.jsonl` |
+| Real pretrained smoke success | `artifacts/20261020T231420Z-feedaac5/result.json`, `model_response.json` |
+| Earlier native-JSON model failure | `artifacts/20261020T231147Z-340cbe7b/result.json`, `model_response.json` |
+| Machine-readable test results | `artifacts/tests.xml` |
+
+Artifacts are ignored by Git; they remain available locally. Source code and reproduction commands are in the repository.
+
+## Incomplete or deliberately deferred
+
+- The application policy is deterministic profile matching. General model-driven visual planning and a released OpenWebRL policy evaluation are not implemented/verified.
+- The pretrained smoke test is one focused-field task. It does not prove autonomous navigation or application completion by that model. Native structured output from the tiny model failed on the first attempt.
+- The adapter accepts only the bundled loopback fixture and synthetic profiles. Real job boards, multipage workflows, custom widgets, iframes/shadow DOM, controls without IDs, and broad question interpretation need more implementation and fixtures.
+- Human-input requests are written to JSON and the console; profile editing currently means editing the JSON file and rerunning.
+- Resume upload uses a text fixture. PDF/DOCX resume handling on real job boards has not been tested.
+- The full upstream SGLang evaluation runner and SFT conversion were inspected but not executed. Hosted native endpoint mode has not been validated against an actual policy server.
+- Exported select/upload/scroll actions need an adapter for upstream replay. These offline traces lack on-policy sampling metadata needed for RL; no claim is made that they can be passed directly into RL training.
+- Linux/macOS setup scripts have not been exercised. This development run used Windows and Python 3.14.3.
+- No OpenEnv integration, RL training, real applications, repository publication, or deployment occurred.
+
+## Important implementation choices
+
+The upstream root initializer eagerly imported the training driver; a minimal lazy-import patch avoids installing the GPU training stack for ordinary browser runs. The project retains OpenWebRL and its native action conventions.
+
+The approval gate uses a fingerprint of reviewed field values and resume bytes. Browser routing blocks unapproved requests; the simulated server independently checks the approved multipart payload. This avoids trying to evaluate a page while Chromium has its navigation request paused, which deadlocked an earlier implementation.
+
+The fixed fixture oracle must be independently updated when intentional changes are made to the dummy candidate's expected answers. The oracle reports those changes as mismatches until reviewed.
+
+Future work should first add more local ATS-style fixtures and a reliable visual policy, then connect the guarded environment and explicit action extensions to upstream evaluation. RL training remains a later stage.

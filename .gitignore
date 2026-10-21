@@ -1,0 +1,17 @@
+.venv/
+vendor/
+__pycache__/
+.pytest_cache/
+artifacts/
+.env
+*.egg-info/
+profiles/private/
+node_modules/
+dist/
+.env.*
+!.env.example
+web/.openai/local/
+web/.openai/*.zip
+*.tsbuildinfo
+playwright-report/
+test-results/

@@ -1,0 +1,12 @@
+{
+  "note": "Reference configuration; pass these values through the CLI flags shown in README.md.",
+  "profile": "profiles/dummy.json",
+  "output": "artifacts",
+  "review": false,
+  "framework": "OpenWebRL",
+  "upstream_commit": "9a120949aca3e58a2628f4b4e6edd0474d984873",
+  "local_smoke_model": "HuggingFaceTB/SmolVLM-256M-Instruct",
+  "endpoint_example": "http://127.0.0.1:30000/v1",
+  "endpoint_model_example": "your-served-model-id",
+  "training_enabled": false
+}

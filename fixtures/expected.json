@@ -1,0 +1,14 @@
+{
+  "full_name": "Alex Example",
+  "email": "alex@example.test",
+  "phone": "+1-202-555-0148",
+  "city": "Example City",
+  "school": "Example University",
+  "degree": "BSc",
+  "employer": "Example Widgets",
+  "job_title": "Software Engineer",
+  "skills": "Python, SQL, Playwright",
+  "work_authorization": "yes",
+  "salary": "",
+  "motivation": ""
+}

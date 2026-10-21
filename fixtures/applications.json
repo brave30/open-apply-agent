@@ -1,0 +1,1852 @@
+[
+  {
+    "id": "workday-1",
+    "platform": "Workday",
+    "company": "Northstar Systems",
+    "title": "Software Engineer",
+    "location": "New York, NY",
+    "salary": "$110k – $150k",
+    "department": "Engineering",
+    "description": "Join the Northstar Systems team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 1,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "school",
+        "label": "School",
+        "section": "Experience & education"
+      },
+      {
+        "id": "degree",
+        "label": "Degree",
+        "section": "Experience & education"
+      },
+      {
+        "id": "employer",
+        "label": "Most recent employer",
+        "section": "Experience & education"
+      },
+      {
+        "id": "job_title",
+        "label": "Most recent job title",
+        "section": "Experience & education"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "What is your available start date?",
+        "type": "text",
+        "section": "Additional questions"
+      }
+    ]
+  },
+  {
+    "id": "workday-2",
+    "platform": "Workday",
+    "company": "Summit Health",
+    "title": "Data Analyst",
+    "location": "Remote · US",
+    "salary": "$95k – $135k",
+    "department": "Data & Insights",
+    "description": "Join the Summit Health team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 2,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "school",
+        "label": "School",
+        "section": "Experience & education"
+      },
+      {
+        "id": "degree",
+        "label": "Degree",
+        "section": "Experience & education"
+      },
+      {
+        "id": "employer",
+        "label": "Most recent employer",
+        "section": "Experience & education"
+      },
+      {
+        "id": "job_title",
+        "label": "Most recent job title",
+        "section": "Experience & education"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "Are you willing to relocate?",
+        "type": "text",
+        "section": "Additional questions"
+      }
+    ]
+  },
+  {
+    "id": "workday-3",
+    "platform": "Workday",
+    "company": "Atlas Financial",
+    "title": "Product Manager",
+    "location": "Austin, TX",
+    "salary": "$120k – $165k",
+    "department": "Product",
+    "description": "Join the Atlas Financial team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 3,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "school",
+        "label": "School",
+        "section": "Experience & education"
+      },
+      {
+        "id": "degree",
+        "label": "Degree",
+        "section": "Experience & education"
+      },
+      {
+        "id": "employer",
+        "label": "Most recent employer",
+        "section": "Experience & education"
+      },
+      {
+        "id": "job_title",
+        "label": "Most recent job title",
+        "section": "Experience & education"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "Please share a portfolio URL.",
+        "type": "url",
+        "section": "Additional questions"
+      }
+    ]
+  },
+  {
+    "id": "workday-4",
+    "platform": "Workday",
+    "company": "Cedar Energy",
+    "title": "Cloud Engineer",
+    "location": "San Francisco, CA",
+    "salary": "$105k – $145k",
+    "department": "Infrastructure",
+    "description": "Join the Cedar Energy team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 4,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "school",
+        "label": "School",
+        "section": "Experience & education"
+      },
+      {
+        "id": "degree",
+        "label": "Degree",
+        "section": "Experience & education"
+      },
+      {
+        "id": "employer",
+        "label": "Most recent employer",
+        "section": "Experience & education"
+      },
+      {
+        "id": "job_title",
+        "label": "Most recent job title",
+        "section": "Experience & education"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "How many years of relevant experience do you have?",
+        "type": "text",
+        "section": "Additional questions"
+      }
+    ]
+  },
+  {
+    "id": "workday-5",
+    "platform": "Workday",
+    "company": "Meridian Retail",
+    "title": "UX Designer",
+    "location": "Boston, MA",
+    "salary": "$90k – $130k",
+    "department": "Design & Experience",
+    "description": "Join the Meridian Retail team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 5,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "school",
+        "label": "School",
+        "section": "Experience & education"
+      },
+      {
+        "id": "degree",
+        "label": "Degree",
+        "section": "Experience & education"
+      },
+      {
+        "id": "employer",
+        "label": "Most recent employer",
+        "section": "Experience & education"
+      },
+      {
+        "id": "job_title",
+        "label": "Most recent job title",
+        "section": "Experience & education"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "What working arrangement do you prefer?",
+        "type": "text",
+        "section": "Additional questions"
+      }
+    ]
+  },
+  {
+    "id": "greenhouse-1",
+    "platform": "Greenhouse",
+    "company": "Linear Grove",
+    "title": "Frontend Engineer",
+    "location": "New York, NY",
+    "salary": "$110k – $150k",
+    "department": "Engineering",
+    "description": "Join the Linear Grove team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 1,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "school",
+        "label": "School",
+        "section": "Experience & education"
+      },
+      {
+        "id": "degree",
+        "label": "Degree",
+        "section": "Experience & education"
+      },
+      {
+        "id": "employer",
+        "label": "Most recent employer",
+        "section": "Experience & education"
+      },
+      {
+        "id": "job_title",
+        "label": "Most recent job title",
+        "section": "Experience & education"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "What is your available start date?",
+        "type": "text",
+        "section": "Additional questions"
+      }
+    ]
+  },
+  {
+    "id": "greenhouse-2",
+    "platform": "Greenhouse",
+    "company": "Orbit Labs",
+    "title": "Machine Learning Engineer",
+    "location": "Remote · US",
+    "salary": "$95k – $135k",
+    "department": "Data & Insights",
+    "description": "Join the Orbit Labs team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 2,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "school",
+        "label": "School",
+        "section": "Experience & education"
+      },
+      {
+        "id": "degree",
+        "label": "Degree",
+        "section": "Experience & education"
+      },
+      {
+        "id": "employer",
+        "label": "Most recent employer",
+        "section": "Experience & education"
+      },
+      {
+        "id": "job_title",
+        "label": "Most recent job title",
+        "section": "Experience & education"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "Are you willing to relocate?",
+        "type": "text",
+        "section": "Additional questions"
+      }
+    ]
+  },
+  {
+    "id": "greenhouse-3",
+    "platform": "Greenhouse",
+    "company": "Moss Robotics",
+    "title": "Robotics Engineer",
+    "location": "Austin, TX",
+    "salary": "$120k – $165k",
+    "department": "Product",
+    "description": "Join the Moss Robotics team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 3,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "school",
+        "label": "School",
+        "section": "Experience & education"
+      },
+      {
+        "id": "degree",
+        "label": "Degree",
+        "section": "Experience & education"
+      },
+      {
+        "id": "employer",
+        "label": "Most recent employer",
+        "section": "Experience & education"
+      },
+      {
+        "id": "job_title",
+        "label": "Most recent job title",
+        "section": "Experience & education"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "Please share a portfolio URL.",
+        "type": "url",
+        "section": "Additional questions"
+      }
+    ]
+  },
+  {
+    "id": "greenhouse-4",
+    "platform": "Greenhouse",
+    "company": "Forma Studio",
+    "title": "Product Designer",
+    "location": "San Francisco, CA",
+    "salary": "$105k – $145k",
+    "department": "Infrastructure",
+    "description": "Join the Forma Studio team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 4,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "school",
+        "label": "School",
+        "section": "Experience & education"
+      },
+      {
+        "id": "degree",
+        "label": "Degree",
+        "section": "Experience & education"
+      },
+      {
+        "id": "employer",
+        "label": "Most recent employer",
+        "section": "Experience & education"
+      },
+      {
+        "id": "job_title",
+        "label": "Most recent job title",
+        "section": "Experience & education"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "How many years of relevant experience do you have?",
+        "type": "text",
+        "section": "Additional questions"
+      }
+    ]
+  },
+  {
+    "id": "greenhouse-5",
+    "platform": "Greenhouse",
+    "company": "Harbor AI",
+    "title": "Customer Success Manager",
+    "location": "Boston, MA",
+    "salary": "$90k – $130k",
+    "department": "Design & Experience",
+    "description": "Join the Harbor AI team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 5,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "school",
+        "label": "School",
+        "section": "Experience & education"
+      },
+      {
+        "id": "degree",
+        "label": "Degree",
+        "section": "Experience & education"
+      },
+      {
+        "id": "employer",
+        "label": "Most recent employer",
+        "section": "Experience & education"
+      },
+      {
+        "id": "job_title",
+        "label": "Most recent job title",
+        "section": "Experience & education"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "What working arrangement do you prefer?",
+        "type": "text",
+        "section": "Additional questions"
+      }
+    ]
+  },
+  {
+    "id": "lever-1",
+    "platform": "Lever",
+    "company": "Juniper Cloud",
+    "title": "Backend Engineer",
+    "location": "New York, NY",
+    "salary": "$110k – $150k",
+    "department": "Engineering",
+    "description": "Join the Juniper Cloud team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 1,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "employer",
+        "label": "Most recent employer",
+        "section": "Experience & education"
+      },
+      {
+        "id": "job_title",
+        "label": "Most recent job title",
+        "section": "Experience & education"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "What is your available start date?",
+        "type": "text",
+        "section": "Additional questions"
+      }
+    ]
+  },
+  {
+    "id": "lever-2",
+    "platform": "Lever",
+    "company": "Lumen Analytics",
+    "title": "Analytics Engineer",
+    "location": "Remote · US",
+    "salary": "$95k – $135k",
+    "department": "Data & Insights",
+    "description": "Join the Lumen Analytics team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 2,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "employer",
+        "label": "Most recent employer",
+        "section": "Experience & education"
+      },
+      {
+        "id": "job_title",
+        "label": "Most recent job title",
+        "section": "Experience & education"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "Are you willing to relocate?",
+        "type": "text",
+        "section": "Additional questions"
+      }
+    ]
+  },
+  {
+    "id": "lever-3",
+    "platform": "Lever",
+    "company": "Pinecone Works",
+    "title": "DevOps Engineer",
+    "location": "Austin, TX",
+    "salary": "$120k – $165k",
+    "department": "Product",
+    "description": "Join the Pinecone Works team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 3,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "employer",
+        "label": "Most recent employer",
+        "section": "Experience & education"
+      },
+      {
+        "id": "job_title",
+        "label": "Most recent job title",
+        "section": "Experience & education"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "Please share a portfolio URL.",
+        "type": "url",
+        "section": "Additional questions"
+      }
+    ]
+  },
+  {
+    "id": "lever-4",
+    "platform": "Lever",
+    "company": "Tidal Software",
+    "title": "Technical Writer",
+    "location": "San Francisco, CA",
+    "salary": "$105k – $145k",
+    "department": "Infrastructure",
+    "description": "Join the Tidal Software team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 4,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "employer",
+        "label": "Most recent employer",
+        "section": "Experience & education"
+      },
+      {
+        "id": "job_title",
+        "label": "Most recent job title",
+        "section": "Experience & education"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "How many years of relevant experience do you have?",
+        "type": "text",
+        "section": "Additional questions"
+      }
+    ]
+  },
+  {
+    "id": "lever-5",
+    "platform": "Lever",
+    "company": "Copper Labs",
+    "title": "Security Engineer",
+    "location": "Boston, MA",
+    "salary": "$90k – $130k",
+    "department": "Design & Experience",
+    "description": "Join the Copper Labs team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 5,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "employer",
+        "label": "Most recent employer",
+        "section": "Experience & education"
+      },
+      {
+        "id": "job_title",
+        "label": "Most recent job title",
+        "section": "Experience & education"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "What working arrangement do you prefer?",
+        "type": "text",
+        "section": "Additional questions"
+      }
+    ]
+  },
+  {
+    "id": "other-1",
+    "platform": "Other",
+    "company": "Studio Fern",
+    "title": "Creative Developer",
+    "location": "New York, NY",
+    "salary": "$110k – $150k",
+    "department": "Engineering",
+    "description": "Join the Studio Fern team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 1,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "school",
+        "label": "School",
+        "section": "Experience & education"
+      },
+      {
+        "id": "degree",
+        "label": "Degree",
+        "section": "Experience & education"
+      },
+      {
+        "id": "employer",
+        "label": "Most recent employer",
+        "section": "Experience & education"
+      },
+      {
+        "id": "job_title",
+        "label": "Most recent job title",
+        "section": "Experience & education"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "What is your available start date?",
+        "type": "text",
+        "section": "Additional questions"
+      }
+    ]
+  },
+  {
+    "id": "other-2",
+    "platform": "Other",
+    "company": "Bluebird Commerce",
+    "title": "Operations Analyst",
+    "location": "Remote · US",
+    "salary": "$95k – $135k",
+    "department": "Data & Insights",
+    "description": "Join the Bluebird Commerce team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 2,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "Are you willing to relocate?",
+        "type": "text",
+        "section": "Additional questions"
+      }
+    ]
+  },
+  {
+    "id": "other-3",
+    "platform": "Other",
+    "company": "Helio Research",
+    "title": "Research Assistant",
+    "location": "Austin, TX",
+    "salary": "$120k – $165k",
+    "department": "Product",
+    "description": "Join the Helio Research team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 3,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "school",
+        "label": "School",
+        "section": "Experience & education"
+      },
+      {
+        "id": "degree",
+        "label": "Degree",
+        "section": "Experience & education"
+      },
+      {
+        "id": "employer",
+        "label": "Most recent employer",
+        "section": "Experience & education"
+      },
+      {
+        "id": "job_title",
+        "label": "Most recent job title",
+        "section": "Experience & education"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "Please share a portfolio URL.",
+        "type": "url",
+        "section": "Additional questions"
+      }
+    ]
+  },
+  {
+    "id": "other-4",
+    "platform": "Other",
+    "company": "Fieldwork Co.",
+    "title": "Project Coordinator",
+    "location": "San Francisco, CA",
+    "salary": "$105k – $145k",
+    "department": "Infrastructure",
+    "description": "Join the Fieldwork Co. team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 4,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "How many years of relevant experience do you have?",
+        "type": "text",
+        "section": "Additional questions"
+      }
+    ]
+  },
+  {
+    "id": "other-5",
+    "platform": "Other",
+    "company": "Beacon Education",
+    "title": "Learning Designer",
+    "location": "Boston, MA",
+    "salary": "$90k – $130k",
+    "department": "Design & Experience",
+    "description": "Join the Beacon Education team to build thoughtful products, collaborate across disciplines, and solve meaningful problems. This fictional opening is part of the Open Apply testing catalog.",
+    "variant": 5,
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "email",
+        "label": "Email address",
+        "type": "email",
+        "required": true,
+        "section": "Personal information"
+      },
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "tel",
+        "section": "Personal information"
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "section": "Personal information"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "type": "url",
+        "section": "Personal information"
+      },
+      {
+        "id": "school",
+        "label": "School",
+        "section": "Experience & education"
+      },
+      {
+        "id": "degree",
+        "label": "Degree",
+        "section": "Experience & education"
+      },
+      {
+        "id": "employer",
+        "label": "Most recent employer",
+        "section": "Experience & education"
+      },
+      {
+        "id": "job_title",
+        "label": "Most recent job title",
+        "section": "Experience & education"
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "type": "textarea",
+        "section": "Experience & education"
+      },
+      {
+        "id": "work_authorization",
+        "label": "Are you authorized to work in the United States?",
+        "type": "select",
+        "options": [
+          "",
+          "Yes",
+          "No"
+        ],
+        "section": "Additional questions"
+      },
+      {
+        "id": "salary",
+        "label": "Desired salary",
+        "section": "Additional questions"
+      },
+      {
+        "id": "motivation",
+        "label": "Why do you want this job?",
+        "type": "textarea",
+        "section": "Additional questions"
+      },
+      {
+        "id": "custom_answer",
+        "label": "What working arrangement do you prefer?",
+        "type": "text",
+        "section": "Additional questions"
+      }
+    ]
+  }
+]

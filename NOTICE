@@ -1,0 +1,4 @@
+Open Apply Agent
+Uses OpenWebRL (https://github.com/OpenWebRL/OpenWebRL), Apache-2.0.
+The pinned upstream source is cloned separately; local changes are recorded in patches/.
+The pretrained smoke model is HuggingFaceTB/SmolVLM-256M-Instruct, Apache-2.0.

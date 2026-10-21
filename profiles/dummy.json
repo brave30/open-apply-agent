@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "candidate_id": "synthetic-alex",
+  "synthetic": true,
+  "personal": {
+    "full_name": "Alex Example",
+    "email": "alex@example.test",
+    "phone": "+1-202-555-0148",
+    "city": "Example City"
+  },
+  "education": [
+    {
+      "school": "Example University",
+      "degree": "BSc",
+      "field": "Computer Science",
+      "graduation_year": 2022
+    }
+  ],
+  "work_experience": [
+    {
+      "employer": "Example Widgets",
+      "title": "Software Engineer",
+      "start_date": "2022-01",
+      "end_date": "2025-12",
+      "description": "Built synthetic test services."
+    }
+  ],
+  "skills": [
+    "Python",
+    "SQL",
+    "Playwright"
+  ],
+  "resume_files": [
+    {
+      "path": "dummy-resume.txt",
+      "sha256": "8577b1b2a99a10c5149407840f19823e25aae518adcb4da0c42383ad903292c1"
+    }
+  ],
+  "verified_answers": [
+    {
+      "question": "Are you authorized to work in the United States?",
+      "value": "Yes",
+      "verified": true,
+      "verified_at": "2026-10-20",
+      "source": "Synthetic fixture author"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+SYNTHETIC CANDIDATE - NOT A REAL PERSON
+Alex Example
+alex@example.test
+Software Engineer at Example Widgets (2022-01 to 2025-12).
+BSc Computer Science, Example University, 2022.
+Skills: Python, SQL, Playwright.
