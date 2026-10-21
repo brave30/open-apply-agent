@@ -1,5 +1,26 @@
 # Continue Supabase provisioning
 
+## Provisioning update — October 21, 2026
+
+- Supabase connector is available. With the user's confirmation, created the free ($0/month quoted) `open-apply-agent` project in brave30's Org, region `us-east-1`, reference `aajwxgywjrymkjfmqtbz`.
+- API origin: https://aajwxgywjrymkjfmqtbz.supabase.co. Modern publishable key is in ignored `web/.env.local`; no service-role key is used.
+- Applied `workspace` and `catalog` migrations. Verified all four public tables have RLS, the catalog contains 20 rows, and the private resumes bucket has a 5 MB limit.
+- All eight pgTAP tenant tests passed against this new dedicated project in a rolled-back transaction. The MCP returns only the last result set, so results were collected into a temporary table and returned as one JSON array.
+- All 18 live checks passed through the public client API with two disposable synthetic accounts: password sign-in, catalog access, private profiles, cross-tenant read/update/upload/download/submission denial, resume hash, draft persistence, stale review rejection, snapshot submission, duplicate rejection, protected submitted resume, and Python cloud-profile browser execution.
+- Removed the disposable resume through Storage API and deleted both synthetic accounts after sign-out; verified no test users, storage objects, profiles, or submissions remain. Public Auth settings confirm email/password is enabled and email confirmation remains enabled.
+- Python evidence: `artifacts/20261021T233845Z-bf0ac0e9/result.json`: 11 filled fields verified, missing answers left unanswered, no submission. Summary: `artifacts/supabase-live-verification.json`. Scratch verifier: `artifacts/verify-supabase.mjs` (credentials supplied through hidden stdin, not persisted).
+- Frontend build and all three frontend tests passed. Browser UI QA remains unavailable because this session has no browser surfaces.
+- Republished the SAME owner-private Site successfully: https://open-apply-workspace-brave30.sweetghost128.chatgpt.site.
+- Site source commit: `77591e0dbb77b3d3fa1c1ac0eda7e06e57b67787`; saved version: `appgprj_6ad9464497c48191a85fde8b010eff8b~appgver_1d0fabe92e308191941d64a01154d5fb`; deployment: `appgdep_6ad94d11a5f881918ca93f8681248aed`.
+- Latest pre-update GitHub CI is green: https://github.com/brave30/open-apply-agent/actions/runs/39692735748.
+- Security advisor reports the intentionally authenticated `SECURITY DEFINER` submission RPC. It requires `auth.uid()`, locks only the owner's draft, compares the reviewed snapshot, checks resume ownership/existence, and denies anonymous/public execute. [Advisor reference](https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable). Performance info notices: two unindexed catalog foreign keys and unused indexes on the new project.
+
+### Remaining dashboard action
+
+The connector cannot read/write Auth URL configuration, and no browser is connected. The user was asked to open https://supabase.com/dashboard/project/aajwxgywjrymkjfmqtbz/auth/url-configuration, set Site URL to `https://open-apply-workspace-brave30.sweetghost128.chatgpt.site`, and allow that URL plus `http://127.0.0.1:5173`. Do not claim email confirmation/reset redirects have been verified until this is saved and tested. Keep email confirmation enabled; configure production SMTP before broader signup traffic. Account deletion/export UI, orphan cleanup, and abuse monitoring remain deferred.
+
+The sections below preserve the earlier handoff; their unprovisioned status is superseded by this update.
+
 The user authorized building and hosting a React + TypeScript candidate website using Watermelon UI, Supabase, twenty application simulations (five each Workday, Greenhouse, Lever, Other), and a GitHub repository. They said Supabase was connected. Discovery confirmed the Supabase plugin is installed, but this session never received its tools; no browser surfaces were available either. Do not repeat installation instructions. Discover newly available Supabase tools first.
 
 ## Completed

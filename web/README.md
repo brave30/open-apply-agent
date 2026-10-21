@@ -16,6 +16,8 @@ Without those variables, the website explicitly runs in preview mode. You can br
 
 ## Database
 
+The dedicated hosted project is `open-apply-agent` (`aajwxgywjrymkjfmqtbz`, US East), provisioned on the free tier. Both migrations are applied, all four public tables have RLS enabled, and the `resumes` bucket is private. Local public connection settings are in ignored `.env.local`; obtain the publishable key from the Supabase dashboard when setting up another checkout.
+
 Apply both SQL migrations in ../supabase/migrations to a dedicated Supabase project in filename order. They create candidate_profiles, applications, application_drafts, application_submissions, and the private resumes storage bucket. Row-level security limits personal records and resume paths to the authenticated user's UUID. The public browser key cannot modify the catalog or write submission records directly.
 
 Configure Supabase Auth's Site URL and allowed redirect URLs with the deployed website origin and your local development origin (http://127.0.0.1:5173). Keep email confirmation enabled; configure production SMTP before broader signup traffic. No service-role or management token belongs in VITE_ variables.
