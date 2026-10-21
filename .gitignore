@@ -15,3 +15,5 @@ web/.openai/*.zip
 *.tsbuildinfo
 playwright-report/
 test-results/
+supabase/.temp/
+supabase/.branches/
