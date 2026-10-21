@@ -1,0 +1,2 @@
+# The resume fixture is validated by its exact bytes, including line endings.
+profiles/dummy-resume.txt -text
