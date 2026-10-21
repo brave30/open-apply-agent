@@ -4,7 +4,7 @@ permissions:
   contents: read
 jobs:
   frontend:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     defaults:
       run:
         working-directory: web
@@ -21,7 +21,7 @@ jobs:
       - run: node scripts/generate-fixtures.mjs
       - run: git diff --exit-code -- ../fixtures/applications.json ../supabase/migrations/202610210002_catalog.sql
   agent:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
