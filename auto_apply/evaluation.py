@@ -53,14 +53,18 @@ def export_episode(directory: Path):
     tools = json.loads((upstream_root() / "openwebrl/env/prompts/tools_all.json").read_text())
     for name in sorted(extensions):
         tools.append({"type": "function", "function": {"name": name, "description": "Application MVP extension; requires adapter support before upstream replay.", "parameters": {"type": "object"}}})
+    result_path = directory / "result.json"
+    result = json.loads(result_path.read_text(encoding="utf-8")) if result_path.exists() else {}
     episode = {"messages": messages, "tools": tools, "metadata": {
-        "task_id": "synthetic-application-v1", "policy": "profile_baseline",
+        "task_id": "synthetic-application-v1", "policy": result.get("policy", "profile_baseline"),
+        "model": result.get("model"), "model_inference": result.get("model_inference", False),
         "synthetic": profile.get("synthetic", True) if profile else True, "action_extensions": sorted(extensions), "requires_extension_adapter": bool(extensions),
         "reward": json.loads((directory / "fixture_evaluation.json").read_text())["score"] if (directory / "fixture_evaluation.json").exists() else None}}
     (directory / "openai_episode.jsonl").write_text(json.dumps(episode) + "\n", encoding="utf-8")
     url = events[0]["observation_after"]["url"]
     task = {"id": "synthetic-application-v1", "web": url,
             "ques": "Fill the synthetic application using this candidate profile: " + json.dumps(profile) + ". Leave unknown answers blank. Stop before final submission.",
-            "metadata": {"task_id": "synthetic-application-v1", "start_url": url, "synthetic": True}}
+            "metadata": {"task_id": "synthetic-application-v1", "start_url": url,
+                         "synthetic": profile.get("synthetic", True) if profile else True}}
     (directory / "benchmark.jsonl").write_text(json.dumps(task) + "\n", encoding="utf-8")
     return episode

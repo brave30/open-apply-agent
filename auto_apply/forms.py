@@ -1,9 +1,9 @@
 import re
 from .profile import Profile
 
-DISCOVER = """() => [...document.querySelectorAll('input,select,textarea')]
+DISCOVER = """(visibleOnly) => [...document.querySelectorAll('input,select,textarea')]
  .filter(e => !['submit','button','hidden','reset'].includes(e.type) && !e.disabled &&
-              e.getClientRects().length && e.id)
+              (visibleOnly === false || e.getClientRects().length) && e.id)
  .map(e => ({id:e.id, name:e.name, type:e.type, tag:e.tagName.toLowerCase(),
  label:[...(e.labels||[])].map(l=>{const c=l.cloneNode(true);
  c.querySelectorAll('input,select,textarea,button').forEach(n=>n.remove());return c.textContent.trim()}).join(' ') || e.getAttribute('aria-label') || '',

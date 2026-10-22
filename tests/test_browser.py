@@ -11,6 +11,7 @@ from auto_apply.trajectory import Trajectory
 from auto_apply.upstream import make_env
 from auto_apply.inference import smoke
 from auto_apply.evaluation import evaluate_fixture, export_episode
+from auto_apply.computer import fill_with_computer
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -131,6 +132,72 @@ def test_workday_multiple_steps_use_profile_without_submission(tmp_path):
                 assert records == []
                 events = [json.loads(line) for line in (trace.directory / 'trajectory.jsonl').read_text().splitlines()]
                 assert sum(e['action']['name'] == 'application_next_step' for e in events) == 3
+            finally:
+                await env.exit()
+    asyncio.run(exercise())
+
+
+def test_visual_loop_executes_model_actions_uploads_and_audits(tmp_path):
+    """Scripted model double validates wiring only, not pretrained competence."""
+    async def exercise():
+        with serve() as (origin, token, records):
+            env = make_env()
+            try:
+                await env.setup()
+                guard = SubmissionGuard(origin, token)
+                await guard.install(env.context)
+                await env.page.goto(origin + '/apply')
+                await env.page.set_content('<form method="post" action="/submit"><label>Full name<input id="random-name" name="name"></label><label>Resume<input id="random-file" type="file" name="resume"></label><label>Are you authorized to work in the United States?<select id="random-select"><option value="">Choose</option><option value="yes">Yes</option></select></label><button id="random-submit" type="submit">Submit</button></form>')
+                points = []
+                for selector in ('#random-name', '#random-file', '#random-select', '#random-submit'):
+                    box = await env.page.locator(selector).bounding_box()
+                    points.append([(box['x'] + box['width'] / 2) * 1000 / 1279,
+                                   (box['y'] + box['height'] / 2) * 1000 / 899])
+                actions = [
+                    {'name': 'write', 'arguments': {'message': 'Alex Example'}},
+                    [{'name': 'click', 'arguments': {'point_2d': points[0]}},
+                     {'name': 'write', 'arguments': {'message': 'Alex Example'}}],
+                    {'name': 'click', 'arguments': {'point_2d': points[3]}},
+                    {'name': 'click', 'arguments': {'point_2d': points[2]}},
+                    {'name': 'done', 'arguments': {'response': 'Ready for review.'}},
+                    {'name': 'select_option', 'arguments': {'point_2d': points[2], 'label': 'Yes'}},
+                    {'name': 'upload_resume', 'arguments': {'point_2d': points[1], 'resume_index': 0}},
+                    {'name': 'done', 'arguments': {'response': 'Ready for review.'}},
+                ]
+
+                class ModelDouble:
+                    model = 'TEST DOUBLE - NOT PRETRAINED'
+                    turns = 0
+
+                    def generate(self, prompt, screenshot):
+                        assert screenshot.startswith(b'\x89PNG')
+                        assert 'candidate_facts' in prompt
+                        assert 'random-name' not in prompt and 'random-file' not in prompt
+                        if self.turns:
+                            assert 'feedback' in prompt
+                        if self.turns == 1:
+                            assert 'No editable input is focused' in prompt
+                        if self.turns == 3:
+                            assert 'Final submission is blocked' in prompt
+                        if self.turns == 4:
+                            assert 'native dropdown' in prompt
+                        if self.turns == 5:
+                            assert 'Independent review found fields needing correction' in prompt
+                        action = actions[self.turns]
+                        self.turns += 1
+                        return '<tool_call>' + json.dumps(action if isinstance(action, list) else [action]) + '</tool_call>'
+
+                trace = Trajectory(tmp_path / 'visual')
+                await trace.record(env, {'name': 'goto_url', 'args': {'url': origin + '/apply'}}, {'success': True})
+                result = await fill_with_computer(env, ROOT / 'profiles/dummy.json', trace, ModelDouble(), max_steps=9,
+                                                  coordinate_space='normalized')
+                assert result['success'] and result['policy'] == 'openwebrl_visual'
+                assert len(result['filled']) == 3 and result['stop_reason'] == 'done'
+                assert result['review_retries'] == 1
+                assert await env.page.locator('#random-name').input_value() == 'Alex Example'
+                assert records == []
+                assert guard.blocked == []  # Submission click was blocked before any request.
+                assert export_episode(trace.directory)['metadata']['policy'] == 'openwebrl_visual'
             finally:
                 await env.exit()
     asyncio.run(exercise())

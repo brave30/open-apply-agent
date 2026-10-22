@@ -1,5 +1,21 @@
 # MVP status — October 20, 2026
 
+## OpenWebRL computer-use deployment — October 22, 2026
+
+The `agent` command now implements a model-driven screenshot/action loop through the real pinned OpenWebRL `WebEnv`. The released `OpenWebRL/OpenWebRL-9B-SFT` checkpoint is pinned to `4398ade320ea15660c2dfc125973232ea8bd33c7`. It receives screenshots, supplied facts, native tool schemas and action feedback. It chooses its own clicks, writes, scrolling, dropdown selection and resume upload. There is no deterministic-filler fallback. The earlier `demo` command remains a baseline benchmark.
+
+The runtime is installed on Context3 under `/data01/tmalekar/open-apply`. GPU 0 is selected by UUID `GPU-b9defd43-7472-55d9-ed1f-271f39c3e878`, with an idle-process/memory check before starting and a lock for our runs. GPU 1 was occupied by another user's vLLM process and was not used. GPU 0 is exposed as logical CUDA device 0 to this process; GPUs 2 and 3 remain untouched.
+
+Source and environments are on shared data storage. Model weights are under `/data01/tmalekar/cache/huggingface/hub`; browser/model/compiler caches, temporary files, logs and artifacts are configured under `/data01/tmalekar/open-apply`. No project files or model data are installed in home. The server environment and launcher templates are `scripts/server-env.sh` and `scripts/run-server-agent.sh`.
+
+The adapter handles the checkpoint's Qwen function tags and normalized 0–1000 screen coordinates. Resume uploads and native dropdown selection are explicit coordinate-based execution extensions: the model chooses the target point and the supplied file/option; the executor does not discover and map fields for it. An editable-focus check prevents typing into the page body. Independent DOM readback and the original fixture oracle validate completion after the visual loop stops.
+
+The original-form live GPU run passed all 13 independent fixture checks: 11 correct fills including the resume and two intentionally blank unknown answers. It finished with `stop_reason=done`, no submission, and no verification retry. Evidence on Context3: `/data01/tmalekar/open-apply/artifacts/20261022T061800Z-b0c00a2c/result.json`. All 38 regression tests passed on Context3, including blocked model Submit clicks, native dropdown/upload execution, and rejected premature completion. A multi-step Workday visual-policy run is being verified separately.
+
+The website-to-worker connection and real employer URLs remain incomplete; the hosted site's existing profile-fill shortcut still uses its earlier TypeScript matcher. The server runner currently operates on the bundled simulations and does not turn the website button into a cloud browser job.
+
+The older implementation notes below describe the baseline and are superseded where this update says otherwise.
+
 ## Visible test update — October 21, 2026
 
 Added `--headed`, `--inspect`, and optional installed-browser selection via `--browser-channel`. The upstream launch patch now exposes those settings while retaining headless Chromium as the default. Downloaded headed Chromium failed with `spawn UNKNOWN` on this system; installed Microsoft Edge successfully ran the complete visible workflow with **13/13 checks**, uploaded resume, two unanswered fields left blank, and no submission. The completed form remains open until the user closes its browser window. Evidence: `artifacts/20261021T222052Z-163475c7/result.json`. Ruff passed after the change.

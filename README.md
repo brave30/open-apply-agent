@@ -1,8 +1,28 @@
-# Open Apply Agent — first working version
+# Open Apply Agent
 
-A synthetic-data job application agent using **OpenWebRL's actual `WebEnv`**. It opens a locally hosted application, reads labelled controls, fills known candidate facts, uploads a resume, and stops for human review. No RL training or OpenEnv integration is included.
+A job application agent using **OpenWebRL's actual `WebEnv`**. The `agent` command runs a visual model in a screenshot → action → screenshot loop: the model chooses clicks, typing, scrolling, dropdown navigation, and resume upload. Candidate profiles supply the facts; field mappings do not choose the agent's actions. It stops for human review. No RL training is required for inference.
 
-The application policy is a conservative deterministic baseline. A separate pretrained vision-model smoke test demonstrates standalone inference and browser execution. This is not yet a general model-driven application agent for real job boards.
+The `demo` command retains the earlier deterministic filler as a regression baseline. The `smoke` command is a separate narrow inference test. All commands currently target the bundled local simulations; support for real employer sites and a website-to-worker connection remains incomplete.
+
+## OpenWebRL computer-use agent
+
+On a CUDA machine with the inference dependencies installed, run:
+
+```bash
+python -m auto_apply.cli agent --application-id workday-1
+```
+
+The default visual policy is `OpenWebRL/OpenWebRL-9B-SFT`, pinned to revision `4398ade320ea15660c2dfc125973232ea8bd33c7`. Install `.[computer]` for local GPU inference. On Context3, PyTorch was installed from the official CUDA 12.6 wheel index to match its driver before installing the remaining dependencies. It uses the pinned upstream GUI instructions and tool schemas, including Qwen's native function-call tags, and executes browser actions through OpenWebRL. The planner receives screenshots, candidate facts, and recent action feedback. It does not receive DOM field lists or selectors. DOM-based checks run independently at the end to verify the result. The resume and native-dropdown executors resolve only the point selected by the model; an additional focus check prevents typing into the page body.
+
+Alternatively, serve that policy through a vision-capable chat-completions endpoint:
+
+```bash
+python -m auto_apply.cli agent --endpoint http://127.0.0.1:30000/v1 --model OpenWebRL/OpenWebRL-9B-SFT --application-id workday-1
+```
+
+The released Qwen-based policy uses normalized 0–1000 coordinates; the adapter converts them to screenshot pixels for WebEnv. Use `--coordinate-space pixels` only for an endpoint trained to emit pixel coordinates. Use `--max-steps` and `--run-timeout` to bound a run, `--headed --inspect` for a local visible browser, and `--cloud-profile` to load the signed-in user's saved profile and private resume. A model's `done` response is not proof of correctness: an independent audit reports incorrect fields back to the visual policy for up to two correction attempts, and the command returns failure if problems remain. An original-fixture run also uses its fixed correctness oracle. Invalid actions, repeated actions on an unchanged screen, or inference failures stop the run; there is no scripted-filler fallback.
+
+Context3 deployment uses `/data01/tmalekar/open-apply/run-agent.sh`, based on [the checked-in launcher](scripts/run-server-agent.sh). It checks GPU 0 for active compute processes and unexpected memory use, acquires a lock for our runs, and restricts CUDA visibility to that GPU's UUID. Other users do not share our lock; the live usage check is also required. All environments, model caches, browser downloads, logs, and artifacts stay under `/data01/tmalekar`.
 
 ## Multi-user web workspace
 
@@ -22,7 +42,9 @@ To load the signed-in candidate's cloud profile and private resume, set `SUPABAS
 
 The original synthetic demo and its fixed correctness oracle remain available without these flags. Catalog/custom-profile runs report per-field readback and do not claim the original oracle's score.
 
-## Run on Windows
+## Offline baseline on Windows
+
+These commands exercise the retained scripted baseline. Use `agent` above for the screenshot-driven OpenWebRL policy.
 
 Prerequisites: Git, Python 3.10+, internet for initial dependencies and Chromium.
 
