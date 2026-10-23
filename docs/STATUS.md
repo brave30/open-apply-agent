@@ -1,5 +1,17 @@
 # MVP status — October 20, 2026
 
+## Website-to-GPU connection ? October 23, 2026
+
+The public website at https://open-apply.sweetghost128.chatgpt.site now exposes Start Agent on each simulated application. Supabase stores private owner-scoped jobs; an outbound-only worker on Context3 polls, snapshots the saved profile, checks the signed private resume URL and SHA-256, and launches the real OpenWebRL 9B model through the existing GPU 0 launcher. No inbound university port or user password is needed. One worker is maintained by a Context3 crontab restart and flock; caches, configuration (mode 600), logs and job artifacts stay under `/data01/tmalekar/open-apply`.
+
+The website polls progress and a private browser screenshot every five seconds, supports cancellation and refresh recovery, and loads only independently verified answers when the user chooses ?Use verified answers in my draft.? Model-selected browser actions remain independent of the DOM audit. No automatic submission occurs. The exact profile-fill shortcut remains a separate baseline.
+
+The live disposable-account Workday job `080f9760-72a1-4787-9a7c-4b3bf49a6ed1` completed with `success=true`, 11/11 fills verified (10 answers plus resume), 27 model actions, and `submitted=false`. Four unknown answers stayed empty. Fourteen live API checks passed, covering anonymous access, worker credentials, cross-user reads/cancellation, forged browser results, duplicate runs, owner cancellation, and actual model results/preview. A headless Edge browser test loaded the real answers into React and exercised Start Agent and Cancel against the live queue with no page errors. Evidence: `artifacts/website-agent-verification.json` and `artifacts/connected-agent-ui.png`.
+
+All 41 Python tests, including browser submission guards, and three frontend tests passed; the frontend production build passed. A second headless browser check on the public deployed URL verified authenticated Start Agent and Cancel with no page errors. Public deployment source commit: `1eedeb48408e6f23e70792be2821277a79e0ec66`. Queue limits are one active job per user, five starts per hour and ten queued/running jobs globally, with expiration and worker leases. The server loads the model per run; startup takes several minutes. Other GPUs and unrelated processes were left untouched.
+
+The security advisor flags the intentionally privileged RPC wrappers: user operations check authenticated ownership; worker operations require a separate high-entropy credential whose hash lives in the unexposed private schema. PUBLIC execution is revoked and grants are scoped to the intended callers. No service-role credential is used by the browser or worker. Leaked-password protection remains an existing project advisory. Real employer URLs remain unsupported.
+
 ## OpenWebRL computer-use deployment — October 22, 2026
 
 The `agent` command now implements a model-driven screenshot/action loop through the real pinned OpenWebRL `WebEnv`. The released `OpenWebRL/OpenWebRL-9B-SFT` checkpoint is pinned to `4398ade320ea15660c2dfc125973232ea8bd33c7`. It receives screenshots, supplied facts, native tool schemas and action feedback. It chooses its own clicks, writes, scrolling, dropdown selection and resume upload. There is no deterministic-filler fallback. The earlier `demo` command remains a baseline benchmark.

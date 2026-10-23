@@ -38,7 +38,7 @@ async def run(args, origin, token, records):
                 model = (EndpointModel(args.endpoint, args.model, max_tokens=2048, computer_use=True) if args.endpoint else
                          OpenWebRLModel(args.model, revision=args.model_revision))
                 result = await fill_with_computer(
-                    env, profile_path, trace, model, allow_personal=args.cloud_profile,
+                    env, profile_path, trace, model, allow_personal=args.cloud_profile or args.personal_profile,
                     max_steps=args.max_steps, timeout=args.run_timeout,
                     coordinate_space=args.coordinate_space,
                 )
@@ -81,6 +81,7 @@ def main():
                         help="agent: screenshot-driven OpenWebRL policy; demo: scripted baseline; smoke: inference test")
     parser.add_argument("--profile", default=str(ROOT / "profiles/dummy.json"))
     parser.add_argument("--cloud-profile", action="store_true", help="Sign in to Supabase and load your own profile and private resume")
+    parser.add_argument("--personal-profile", action="store_true", help="Allow an explicitly provided personal profile (trusted server worker)")
     parser.add_argument("--application-id", help="Simulated application ID, e.g. workday-1 or lever-3")
     parser.add_argument("--output", default=str(ROOT / "artifacts"))
     parser.add_argument("--review", action="store_true", help="Offer terminal review and explicit approval for local synthetic submission")

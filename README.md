@@ -2,7 +2,7 @@
 
 A job application agent using **OpenWebRL's actual `WebEnv`**. The `agent` command runs a visual model in a screenshot → action → screenshot loop: the model chooses clicks, typing, scrolling, dropdown navigation, and resume upload. Candidate profiles supply the facts; field mappings do not choose the agent's actions. It stops for human review. No RL training is required for inference.
 
-The `demo` command retains the earlier deterministic filler as a regression baseline. The `smoke` command is a separate narrow inference test. All commands currently target the bundled local simulations; support for real employer sites and a website-to-worker connection remains incomplete.
+The `demo` command retains the earlier deterministic filler as a regression baseline. The `smoke` command is a separate narrow inference test. The website's Start Agent button queues a real visual-policy run on Context3. All runs currently target the bundled simulations; real employer sites remain unsupported.
 
 ## OpenWebRL computer-use agent
 
@@ -31,6 +31,14 @@ Context3 deployment uses `/data01/tmalekar/open-apply/run-agent.sh`, based on [t
 The catalog contains **20 fictional applications**: five Workday-style multi-step flows, five Greenhouse-style forms, five Lever-style forms, and five custom flows. Source is `web/src/catalog.ts`; generated browser fixtures are in `fixtures/applications.json`. These are independent test simulations, not real employer applications or complete ATS integrations.
 
 See [web setup](web/README.md). Database migrations and tenant isolation tests live in `supabase/`. Without public Supabase configuration the website displays preview mode; it does not claim that cloud saving works.
+
+### Website agent worker
+
+Start Agent snapshots the signed-in user's saved profile and supplies a one-hour signed URL for their private resume. The outbound-only worker on Context3 claims jobs through narrowly scoped credential-protected RPCs; no university inbound HTTP port is exposed. It downloads and checks the resume hash, runs OpenWebRL on GPU 0, and reports progress, a browser preview, and independently verified answers. The website polls every five seconds. Users explicitly load returned answers into their form and retain the existing review/submission flow; the worker never submits.
+
+`scripts/run-server-worker.sh` is installed as `/data01/tmalekar/open-apply/run-worker.sh`. Its private `worker.env` (mode 600) holds the public Supabase URL/key and a separate worker credential; only its SHA-256 hash is stored in the private database schema. It is never included in frontend configuration or Git. `auto_apply.worker` is CPU-only until it launches a job. A worker lock and a once-per-minute Context3 crontab restart keep one worker alive across SSH disconnects. Per-run launcher checks and locking restrict GPU use to idle GPU 0. Occupied GPUs cause requeueing.
+
+The API enforces one active job per user, five starts per hour, ten active jobs globally, cancellation, queue/run expiration, and worker leases. Jobs and previews use owner RLS; private profile snapshots and signed resume URLs are removed from queue inputs on completion/cancellation. Server artifacts contain candidate data under `/data01/tmalekar/open-apply/jobs`; keep them private. `--personal-profile` is the trusted worker's noninteractive profile flag. Model loading happens per run and can take several minutes.
 
 To run the browser agent against a specific form:
 

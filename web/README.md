@@ -41,6 +41,6 @@ Tests: `npm test` and `npm run build`. Database tenancy tests: `supabase test db
 - Five Workday-style multi-step flows; five Greenhouse-style forms; five Lever-style forms; five custom flows.
 - Fictional companies and roles, independent of and unaffiliated with those ATS vendors.
 - Different layouts, optional field sets, and five custom question types. These are not faithful reproductions of each vendor's entire product.
-- Exact profile matching; no inferred answers or vision-model calls from the web UI.
-- The Python browser agent runs separately on your machine; this static host does not execute Chromium jobs.
+- The profile-fill shortcut uses exact matching. Start Agent queues the real OpenWebRL visual model on Context3 and shows progress and a private browser preview.
+- The static host uses Supabase for authenticated jobs; the Python worker executes Chromium on GPU 0. Verified answers are loaded into the draft only when the user chooses to use them.
 - End-to-end cloud verification, account deletion/export UI, upload orphan cleanup, and abuse monitoring are needed before calling this production-ready.
